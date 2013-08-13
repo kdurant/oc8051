@@ -97,38 +97,52 @@ reg [3:0] prescaler;
 
 wire [7:0] scon, pcon, sbuf;
 
-oc8051_uart oc8051_uart_test(.rst(rst), .clk(clk), .bit_in(data_in[0]),
-             .data_in(data_in_r), .wr(wr_r), .wr_bit(wr_bit), .wr_addr(addr_r),
-             .rxd(rxd), .txd(txd), .intr(intr), .t1_ow(ow),
-	     .rclk(rclk), .tclk(tclk),
-	     .pres_ow(pres_ow), .brate2(brate2),
-	     .scon(scon), .pcon(pcon), .sbuf(sbuf));
+oc8051_uart oc8051_uart_test(
+    .rst(rst), 
+    .clk(clk), 
+    .bit_in(data_in[0]),
+    .data_in(data_in_r), 
+    .wr(wr_r), 
+    .wr_bit(wr_bit), 
+    .wr_addr(addr_r),
+    .rxd(rxd), 
+    .txd(txd), 
+    .intr(intr), 
+    .t1_ow(ow),
+	.rclk(rclk), 
+    .tclk(tclk),
+	.pres_ow(pres_ow), 
+    .brate2(brate2),
+	.scon(scon), 
+    .pcon(pcon), 
+    .sbuf(sbuf)
+);
 
 always @(posedge clk)
 begin
-  if (ack) ack <= #1 1'b0;
+  if (ack) ack <= #DELAY 1'b0;
   else
-    ack <= #1 stb;
+    ack <= #DELAY stb;
 end
 
 always @(posedge clk)
 begin
-  wr_r <= #1 wr;
-  addr_r <= #1 addr;
-  data_in_r <= #1 data_in;
+  wr_r <= #DELAY wr;
+  addr_r <= #DELAY addr;
+  data_in_r <= #DELAY data_in;
 end
 
 always @(posedge clk or posedge rst)
 begin
   if (rst) begin
-    prescaler <= #1 4'h5;
-    pres_ow <= #1 1'b0;
+    prescaler <= #DELAY 4'h5;
+    pres_ow <= #DELAY 1'b0;
   end else if (prescaler==4'b1011) begin
-    prescaler <= #1 4'h0;
-    pres_ow <= #1 1'b1;
+    prescaler <= #DELAY 4'h0;
+    pres_ow <= #DELAY 1'b1;
   end else begin
-    prescaler <= #1 prescaler + 4'h1;
-    pres_ow <= #1 1'b0;
+    prescaler <= #DELAY prescaler + 4'h1;
+    pres_ow <= #DELAY 1'b0;
   end
 end
 
