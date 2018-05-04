@@ -1,45 +1,45 @@
 //////////////////////////////////////////////////////////////////////
-//// 								  ////
-//// multiply for 8051 Core 				  	  ////
-//// 								  ////
-//// This file is part of the 8051 cores project 		  ////
-//// http://www.opencores.org/cores/8051/ 			  ////
-//// 								  ////
-//// Description 						  ////
-//// Implementation of multipication used in alu.v 		  ////
-//// 								  ////
-//// To Do: 							  ////
-////  Nothing							  ////
-//// 								  ////
-//// Author(s): 						  ////
-//// - Simon Teran, simont@opencores.org 			  ////
-//// - Marko Mlinar, markom@opencores.org 			  ////
-//// 								  ////
+////                                                              ////
+//// multiply for 8051 Core                                       ////
+////                                                              ////
+//// This file is part of the 8051 cores project                  ////
+//// http://www.opencores.org/cores/8051/                         ////
+////                                                              ////
+//// Description                                                  ////
+//// Implementation of multipication used in alu.v                ////
+////                                                              ////
+//// To Do:                                                       ////
+////  Nothing                                                     ////
+////                                                              ////
+//// Author(s):                                                   ////
+//// - Simon Teran, simont@opencores.org                          ////
+//// - Marko Mlinar, markom@opencores.org                         ////
+////                                                              ////
 //////////////////////////////////////////////////////////////////////
-//// 								  ////
-//// Copyright (C) 2001 Authors and OPENCORES.ORG 		  ////
-//// 								  ////
-//// This source file may be used and distributed without 	  ////
-//// restriction provided that this copyright statement is not 	  ////
+////                                                              ////
+//// Copyright (C) 2001 Authors and OPENCORES.ORG                 ////
+////                                                              ////
+//// This source file may be used and distributed without         ////
+//// restriction provided that this copyright statement is not    ////
 //// removed from the file and that any derivative work contains  ////
 //// the original copyright notice and the associated disclaimer. ////
-//// 								  ////
+////                                                              ////
 //// This source file is free software; you can redistribute it   ////
 //// and/or modify it under the terms of the GNU Lesser General   ////
 //// Public License as published by the Free Software Foundation; ////
 //// either version 2.1 of the License, or (at your option) any   ////
-//// later version. 						  ////
-//// 								  ////
-//// This source is distributed in the hope that it will be 	  ////
+//// later version.                                               ////
+////                                                              ////
+//// This source is distributed in the hope that it will be       ////
 //// useful, but WITHOUT ANY WARRANTY; without even the implied   ////
-//// warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 	  ////
+//// warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR      ////
 //// PURPOSE. See the GNU Lesser General Public License for more  ////
-//// details. 							  ////
-//// 								  ////
-//// You should have received a copy of the GNU Lesser General 	  ////
+//// details.                                                     ////
+////                                                              ////
+//// You should have received a copy of the GNU Lesser General    ////
 //// Public License along with this source; if not, download it   ////
-//// from http://www.opencores.org/lgpl.shtml 			  ////
-//// 								  ////
+//// from http://www.opencores.org/lgpl.shtml                     ////
+////                                                              ////
 //////////////////////////////////////////////////////////////////////
 //
 // CVS Revision History
@@ -87,7 +87,7 @@ wire [15:0] mul_result1, mul_result, shifted;
 reg [1:0] cycle;
 reg [15:0] tmp_mul;
 
-assign mul_result1 = src1 * (cycle == 2'h0 ? src2[7:6] 
+assign mul_result1 = src1 * (cycle == 2'h0 ? src2[7:6]
                            : cycle == 2'h1 ? src2[5:4]
                            : cycle == 2'h2 ? src2[3:2]
                            : src2[1:0]);

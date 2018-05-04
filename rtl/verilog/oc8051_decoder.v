@@ -544,7 +544,7 @@ begin
               stb_i = 1'b1;
               bit_addr = 1'b0;
             end
-    
+
     //op_code [7:1]
           `OC8051_ADD_I : begin
               ram_rd_sel = `OC8051_RRS_I;
@@ -690,7 +690,7 @@ begin
               stb_i = 1'b1;
               bit_addr = 1'b0;
             end
-    
+
     //op_code [7:0]
           `OC8051_ADD_D : begin
               ram_rd_sel = `OC8051_RRS_D;
@@ -881,7 +881,7 @@ begin
               stb_i = 1'b0;
               bit_addr = 1'b0;
             end
-    
+
           `OC8051_JNB : begin
               ram_rd_sel = `OC8051_RRS_D;
               pc_wr = `OC8051_PCW_N;
@@ -1593,7 +1593,7 @@ begin
               src_sel3 <= #1 `OC8051_AS3_DC;
               wr_sfr <= #1 `OC8051_WRS_ACC1;
             end
-    
+
     //op_code [7:1]
           `OC8051_ADD_I : begin
               ram_wr_sel <= #1 `OC8051_RWS_DC;
@@ -1793,7 +1793,7 @@ begin
               src_sel3 <= #1 `OC8051_AS3_DC;
               wr_sfr <= #1 `OC8051_WRS_ACC1;
             end
-    
+
     //op_code [7:0]
           `OC8051_ADD_D : begin
               ram_wr_sel <= #1 `OC8051_RWS_DC;

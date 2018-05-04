@@ -105,84 +105,84 @@ module oc8051_memory_interface (clk, rst,
      istb,
 
 //internal ram
-     wr_o, 
-     wr_bit_o, 
-     rd_addr, 
-     wr_addr, 
-     rd_ind, 
-     wr_ind, 
+     wr_o,
+     wr_bit_o,
+     rd_addr,
+     wr_addr,
+     rd_ind,
+     wr_ind,
      wr_dat,
 
-     bit_in, 
-     in_ram, 
-     sfr, 
-     sfr_bit, 
-     bit_out, 
+     bit_in,
+     in_ram,
+     sfr,
+     sfr_bit,
+     bit_out,
      iram_out,
 
 //program rom
-     iadr_o, 
-     ea, 
+     iadr_o,
+     ea,
      ea_int,
-     op1_out, 
-     op2_out, 
+     op1_out,
+     op2_out,
      op3_out,
 
 //internal
      idat_onchip,
 
 //external
-     iack_i, 
-     istb_o, 
+     iack_i,
+     istb_o,
      idat_i,
 
 //external data ram
-     dadr_o, 
-     dwe_o, 
-     dstb_o, 
+     dadr_o,
+     dwe_o,
+     dstb_o,
      dack_i,
-     ddat_i, 
+     ddat_i,
      ddat_o,
 
 //interrupt interface
-     intr, 
-     int_v, 
+     intr,
+     int_v,
      int_ack,
 
 //alu
-     des_acc, 
-     des1, 
+     des_acc,
+     des1,
      des2,
 
 //sfr's
-     dptr, 
-     ri, 
-     sp,  
-     sp_w, 
-     rn, 
-     acc, 
+     dptr,
+     ri,
+     sp,
+     sp_w,
+     rn,
+     acc,
      reti
    );
 
 
 input         clk,
               rst,
-	      wr_i,
-	      wr_bit_i;
+              wr_i,
+              wr_bit_i;
 
 input         bit_in,
               sfr_bit,
-	      dack_i;
+              dack_i;
 input [2:0]   mem_act;
 input [7:0]   in_ram,
               sfr,
-	      acc,
-	      sp_w;
+              acc,
+              sp_w;
 input [31:0]  idat_i;
 
 output        bit_out,
               mem_wait,
-	      reti;
+              reti;
 output [7:0]  iram_out,
               wr_dat;
 
@@ -207,7 +207,7 @@ reg [23:0]    idat_ir;
 input         iack_i;
 input [7:0]   des_acc,
               des1,
-	      des2;
+              des2;
 output [15:0] iadr_o;
 
 wire          ea_rom_sel;
@@ -249,8 +249,8 @@ reg [7:0]     wr_addr,
 reg [4:0]     rn_r;
 reg [7:0]     ri_r,
               imm_r,
-	      imm2_r,
-	      op1_r;
+              imm2_r,
+              op1_r;
 wire [7:0]    imm,
               imm2;
 
@@ -262,9 +262,9 @@ wire [7:0]    imm,
 
 input         intr,
               rd,
-	      ea, 
-	      ea_int, 
-	      istb;
+              ea,
+              ea_int,
+              istb;
 
 input  [7:0]  int_v;
 
@@ -275,27 +275,27 @@ output        int_ack,
 
 output  [7:0] op1_out,
               op3_out,
-	      op2_out;
+              op2_out;
 
 reg           int_ack_t,
               int_ack,
-	      int_ack_buff;
+              int_ack_buff;
 
 reg [7:0]     int_vec_buff;
 reg [7:0]     op1_out,
               op2_buff,
-	      op3_buff;
+              op3_buff;
 reg [7:0]     op1_o,
               op2_o,
-	      op3_o;
+              op3_o;
 
-reg [7:0]     op1_xt, 
-              op2_xt, 
-	      op3_xt;
+reg [7:0]     op1_xt,
+              op2_xt,
+              op3_xt;
 
 reg [7:0]     op1,
               op2,
-	      op3;
+              op3;
 wire [7:0]    op2_direct;
 
 input [2:0]   pc_wr_sel;
@@ -320,8 +320,8 @@ reg           int_buff,
 ////////////////////////////
 reg           istb_t,
               imem_wait,
-	      dstb_o,
-	      dwe_o;
+              dstb_o,
+              dwe_o;
 
 reg [7:0]     ddat_o;
 reg [15:0]    iadr_t,
@@ -1179,6 +1179,6 @@ begin
   end
 end
 `endif
-  
+
 
 endmodule

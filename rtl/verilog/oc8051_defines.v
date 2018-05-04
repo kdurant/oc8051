@@ -115,7 +115,7 @@
 // sfr addresses
 //
 
-`define     OC8051_SFR_ACC      8'he0 //accumulator 
+`define     OC8051_SFR_ACC      8'he0 //accumulator
 `define     OC8051_SFR_B        8'hf0 //b register
 `define     OC8051_SFR_PSW      8'hd0 //program status word
 `define     OC8051_SFR_P0       8'h80 //port 0

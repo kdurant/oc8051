@@ -89,167 +89,167 @@ begin
       data1 <= #1 int_data0;
       data2 <= #1 int_data1;
       data3 <= #1 int_data2;
-	end
+        end
     5'd1: begin
       data1 <= #1 int_data1;
       data2 <= #1 int_data2;
       data3 <= #1 int_data3;
-	end
+        end
     5'd2: begin
       data1 <= #1 int_data2;
       data2 <= #1 int_data3;
       data3 <= #1 int_data4;
-	end
+        end
     5'd3: begin
       data1 <= #1 int_data3;
       data2 <= #1 int_data4;
       data3 <= #1 int_data5;
-	end
+        end
     5'd4: begin
       data1 <= #1 int_data4;
       data2 <= #1 int_data5;
       data3 <= #1 int_data6;
-	end
+        end
     5'd5: begin
       data1 <= #1 int_data5;
       data2 <= #1 int_data6;
       data3 <= #1 int_data7;
-	end
+        end
     5'd6: begin
       data1 <= #1 int_data6;
       data2 <= #1 int_data7;
       data3 <= #1 int_data8;
-	end
+        end
     5'd7: begin
       data1 <= #1 int_data7;
       data2 <= #1 int_data8;
       data3 <= #1 int_data9;
-	end
+        end
     5'd8: begin
       data1 <= #1 int_data8;
       data2 <= #1 int_data9;
       data3 <= #1 int_data10;
-	end
+        end
     5'd9: begin
       data1 <= #1 int_data9;
       data2 <= #1 int_data10;
       data3 <= #1 int_data11;
-	end
+        end
     5'd10: begin
       data1 <= #1 int_data10;
       data2 <= #1 int_data11;
       data3 <= #1 int_data12;
-	end
+        end
     5'd11: begin
       data1 <= #1 int_data11;
       data2 <= #1 int_data12;
       data3 <= #1 int_data13;
-	end
+        end
     5'd12: begin
       data1 <= #1 int_data12;
       data2 <= #1 int_data13;
       data3 <= #1 int_data14;
-	end
+        end
     5'd13: begin
       data1 <= #1 int_data13;
       data2 <= #1 int_data14;
       data3 <= #1 int_data15;
-	end
+        end
     5'd14: begin
       data1 <= #1 int_data14;
       data2 <= #1 int_data15;
       data3 <= #1 int_data16;
-	end
+        end
     5'd15: begin
       data1 <= #1 int_data15;
       data2 <= #1 int_data16;
       data3 <= #1 int_data17;
-	end
+        end
     5'd16: begin
       data1 <= #1 int_data16;
       data2 <= #1 int_data17;
       data3 <= #1 int_data18;
-	end
+        end
     5'd17: begin
       data1 <= #1 int_data17;
       data2 <= #1 int_data18;
       data3 <= #1 int_data19;
-	end
+        end
     5'd18: begin
       data1 <= #1 int_data18;
       data2 <= #1 int_data19;
       data3 <= #1 int_data20;
-	end
+        end
     5'd19: begin
       data1 <= #1 int_data19;
       data2 <= #1 int_data20;
       data3 <= #1 int_data21;
-	end
+        end
     5'd20: begin
       data1 <= #1 int_data20;
       data2 <= #1 int_data21;
       data3 <= #1 int_data22;
-	end
+        end
     5'd21: begin
       data1 <= #1 int_data21;
       data2 <= #1 int_data22;
       data3 <= #1 int_data23;
-	end
+        end
     5'd22: begin
       data1 <= #1 int_data22;
       data2 <= #1 int_data23;
       data3 <= #1 int_data24;
-	end
+        end
     5'd23: begin
       data1 <= #1 int_data23;
       data2 <= #1 int_data24;
       data3 <= #1 int_data25;
-	end
+        end
     5'd24: begin
       data1 <= #1 int_data24;
       data2 <= #1 int_data25;
       data3 <= #1 int_data26;
-	end
+        end
     5'd25: begin
       data1 <= #1 int_data25;
       data2 <= #1 int_data26;
       data3 <= #1 int_data27;
-	end
+        end
     5'd26: begin
       data1 <= #1 int_data26;
       data2 <= #1 int_data27;
       data3 <= #1 int_data28;
-	end
+        end
     5'd27: begin
       data1 <= #1 int_data27;
       data2 <= #1 int_data28;
       data3 <= #1 int_data29;
-	end
+        end
     5'd28: begin
       data1 <= #1 int_data28;
       data2 <= #1 int_data29;
       data3 <= #1 int_data30;
-	end
+        end
     5'd29: begin
       data1 <= #1 int_data29;
       data2 <= #1 int_data30;
       data3 <= #1 int_data31;
-	end
+        end
     5'd30: begin
       data1 <= #1 int_data30;
       data2 <= #1 int_data31;
       data3 <= #1 int_data0;
-	end
+        end
     5'd31: begin
       data1 <= #1 int_data31;
       data2 <= #1 int_data0;
       data3 <= #1 int_data1;
-	end
+        end
     default: begin
       data1 <= #1 8'h00;
       data2 <= #1 8'h00;
       data3 <= #1 8'h00;
-	end
+        end
   endcase
 end
 

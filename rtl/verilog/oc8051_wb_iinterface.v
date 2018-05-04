@@ -67,10 +67,10 @@
 // synopsys translate_on
 
 
-module oc8051_wb_iinterface(rst, clk, 
+module oc8051_wb_iinterface(rst, clk,
                   adr_i, dat_o, cyc_i, stb_i, ack_o,
-		  adr_o, dat_i, cyc_o, stb_o, ack_i
-		  );
+                  adr_o, dat_i, cyc_o, stb_o, ack_i
+                  );
 //
 // rst           (in)  reset - pin
 // clk           (in)  clock - pini

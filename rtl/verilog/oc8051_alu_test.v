@@ -68,7 +68,7 @@ module oc8051_alu (clk, rst, op_code, src1, src2, src3, srcCy, srcAc, bit_in, de
 // srcCy        (in)  carry input [oc8051_cy_select.data_out]
 // srcAc        (in)  auxiliary carry input [oc8051_psw.data_out[6] ]
 // bit_in       (in)  bit input, used for logic operatins on bits [oc8051_ram_sel.bit_out]
-// des1         (out) 
+// des1         (out)
 // des1_r       (out)
 // des2         (out)
 // desCy        (out) carry output [oc8051_ram_top.bit_data_in, oc8051_acc.bit_in, oc8051_b_register.bit_in, oc8051_psw.cy_in, oc8051_ports.bit_in]

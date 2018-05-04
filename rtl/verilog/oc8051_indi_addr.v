@@ -65,14 +65,14 @@ module oc8051_indi_addr (clk, rst, wr_addr, data_in, wr, wr_bit, ri_out, sel, ba
 //
 
 
-input        clk,	// clock
-             rst,	// reset
-	     wr,	// write
-             sel,	// select register
-	     wr_bit;	// write bit addressable
-input  [1:0] bank;	// select register bank
-input  [7:0] data_in;	// data input
-input  [7:0] wr_addr;	// write address
+input        clk,       // clock
+             rst,       // reset
+             wr,        // write
+             sel,       // select register
+             wr_bit;    // write bit addressable
+input  [1:0] bank;      // select register bank
+input  [7:0] data_in;   // data input
+input  [7:0] wr_addr;   // write address
 
 output [7:0] ri_out;
 

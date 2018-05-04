@@ -76,7 +76,7 @@
 
 `include "oc8051_defines.v"
 
-module oc8051_icache (rst, clk, 
+module oc8051_icache (rst, clk,
              adr_i, dat_o, stb_i, ack_o, cyc_i,
              adr_o, dat_i, stb_o, ack_i, cyc_o
 `ifdef OC8051_BIST
@@ -87,7 +87,7 @@ module oc8051_icache (rst, clk,
          scanb_so,
          scanb_en
 `endif
-	     );
+             );
 //
 // rst           (in)  reset - pin
 // clk           (in)  clock - pini
@@ -118,7 +118,7 @@ reg    [31:0] dat_o;
 // cyc_o    (out)  cycle
 input         ack_i;
 input  [31:0] dat_i;
-output        stb_o, 
+output        stb_o,
               cyc_o;
 output [15:0] adr_o;
 reg           stb_o,
@@ -196,14 +196,14 @@ assign adr_o = {mis_adr[15:LINE_WIDTH+2], cyc, 2'b00};
 oc8051_ram_64x32_dual_bist oc8051_cache_ram(
                            .clk     ( clk        ),
                            .rst     ( rst        ),
-			   .adr0    ( adr_i[ADR_WIDTH+1:2] ),
-			   .dat0_o  ( data0      ),
-			   .en0     ( 1'b1       ),
-			   .adr1    ( addr1      ),
-			   .dat1_o  ( data1_o    ),
-			   .dat1_i  ( data1_i    ),
-			   .en1     ( 1'b1       ),
-			   .wr1     ( wr1        )
+                           .adr0    ( adr_i[ADR_WIDTH+1:2] ),
+                           .dat0_o  ( data0      ),
+                           .en0     ( 1'b1       ),
+                           .adr1    ( addr1      ),
+                           .dat1_o  ( data1_o    ),
+                           .dat1_i  ( data1_i    ),
+                           .en1     ( 1'b1       ),
+                           .wr1     ( wr1        )
 `ifdef OC8051_BIST
          ,
          .scanb_rst(scanb_rst),
@@ -212,7 +212,7 @@ oc8051_ram_64x32_dual_bist oc8051_cache_ram(
          .scanb_so(scanb_so),
          .scanb_en(scanb_en)
 `endif
-			   );
+                           );
 
 defparam oc8051_cache_ram.ADR_WIDTH = ADR_WIDTH;
 
@@ -238,14 +238,14 @@ begin
         con0 <= #1 9'h0;
         con2 <= #1 9'h0;
         vaild_h <= #1 1'b0;
-	vaild_l <= #1 1'b0;
+        vaild_l <= #1 1'b0;
     end
   else
     begin
         con0 <= #1 {con_buf[adr_i[ADR_WIDTH+1:LINE_WIDTH+2]]};
         con2 <= #1 {con_buf[adr_i2]};
-	vaild_l <= #1 valid[adr_i[ADR_WIDTH+1:LINE_WIDTH+2]];
-	vaild_h <= #1 valid[adr_i2];
+        vaild_l <= #1 valid[adr_i[ADR_WIDTH+1:LINE_WIDTH+2]];
+        vaild_h <= #1 valid[adr_i2];
     end
 end
 

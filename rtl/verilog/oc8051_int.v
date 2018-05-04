@@ -72,13 +72,13 @@
 
 
 
-module oc8051_int (clk, rst, 
-        wr_addr,  
-	data_in, bit_in, 
-	wr, wr_bit,
+module oc8051_int (clk, rst,
+        wr_addr,
+        data_in, bit_in,
+        wr, wr_bit,
 //timer interrupts
         tf0, tf1, t2_int,
-	tr0, tr1,
+        tr0, tr1,
 //external interrupts
         ie0, ie1,
 //uart interrupts
@@ -86,7 +86,7 @@ module oc8051_int (clk, rst,
 //to cpu
         intr, reti, int_vec, ack,
 //registers
-	ie, tcon, ip);
+        ie, tcon, ip);
 
 input [7:0] wr_addr, data_in;
 input wr, tf0, tf1, t2_int, ie0, ie1, clk, rst, reti, wr_bit, bit_in, ack, uart_int;
@@ -94,8 +94,8 @@ input wr, tf0, tf1, t2_int, ie0, ie1, clk, rst, reti, wr_bit, bit_in, ack, uart_
 output tr0, tr1, intr;
 output [7:0] int_vec,
              ie,
-	     tcon,
-	     ip;
+             tcon,
+             ip;
 
 reg [7:0] ip, ie, int_vec;
 
@@ -103,7 +103,7 @@ reg [3:0] tcon_s;
 reg tcon_tf1, tcon_tf0, tcon_ie1, tcon_ie0;
 
 //
-// isrc		processing interrupt sources
+// isrc         processing interrupt sources
 // int_dept
 wire [2:0] isrc_cur;
 reg [2:0] isrc [1:0];
@@ -122,9 +122,9 @@ assign cur_lev = int_lev[int_dept_1];
 //reg [1:0] int_levl, int_levl_w;
 
 //
-// int_ln	waiting interrupts on level n
-// ip_ln	interrupts on level n
-// int_src	interrupt sources
+// int_ln       waiting interrupts on level n
+// ip_ln        interrupts on level n
+// int_src      interrupt sources
 wire [5:0] int_l0, int_l1;
 wire [5:0] ip_l0, ip_l1;
 wire [5:0] int_src;

@@ -63,16 +63,16 @@ module oc8051_uart_test (clk, rst, addr, wr, wr_bit, data_in, data_out, bit_out,
 // serial interface simulation. part of oc8051_tb
 //
 // clk          (in)  clock
-// rst		(in)  reset
+// rst          (in)  reset
 // addr         (in)  addres [oc8051.ext_addr]
 // wr           (in)  write [oc8051.write]
-// wr_bit	(in) write bit addresable [oc8051.p3_out.0]
+// wr_bit       (in) write bit addresable [oc8051.p3_out.0]
 // data_in      (out) data input [oc8051.data_out]
 // data_out     (in)  data output [oc8051.data_in]
-// rxd		(in)  receive data [oc8051.txd]
-// txd		(out) transmit data [oc8051.rxd]
-// ow		(in)  owerflov (used in mode 1 and 3) [oc8051.p3_out.1]
-// intr		(out) interrupt request [oc8051.p3_in.0]
+// rxd          (in)  receive data [oc8051.txd]
+// txd          (out) transmit data [oc8051.rxd]
+// ow           (in)  owerflov (used in mode 1 and 3) [oc8051.p3_out.1]
+// intr         (out) interrupt request [oc8051.p3_in.0]
 //
 
 input clk, rst, wr, wr_bit, rxd, ow, stb;
@@ -98,23 +98,23 @@ reg [3:0] prescaler;
 wire [7:0] scon, pcon, sbuf;
 
 oc8051_uart oc8051_uart_test(
-    .rst(rst), 
-    .clk(clk), 
+    .rst(rst),
+    .clk(clk),
     .bit_in(data_in[0]),
-    .data_in(data_in_r), 
-    .wr(wr_r), 
-    .wr_bit(wr_bit), 
+    .data_in(data_in_r),
+    .wr(wr_r),
+    .wr_bit(wr_bit),
     .wr_addr(addr_r),
-    .rxd(rxd), 
-    .txd(txd), 
-    .intr(intr), 
+    .rxd(rxd),
+    .txd(txd),
+    .intr(intr),
     .t1_ow(ow),
-	.rclk(rclk), 
+        .rclk(rclk),
     .tclk(tclk),
-	.pres_ow(pres_ow), 
+        .pres_ow(pres_ow),
     .brate2(brate2),
-	.scon(scon), 
-    .pcon(pcon), 
+        .scon(scon),
+    .pcon(pcon),
     .sbuf(sbuf)
 );
 
@@ -151,10 +151,10 @@ always @(addr or
          scon or pcon or sbuf)
 begin
     case (addr)
-      `OC8051_SFR_SCON: 	data_out = scon;
-      `OC8051_SFR_SBUF: 	data_out = sbuf;
-      `OC8051_SFR_PCON: 	data_out = pcon;
-      default: 			data_out = 8'h00;
+      `OC8051_SFR_SCON:         data_out = scon;
+      `OC8051_SFR_SBUF:         data_out = sbuf;
+      `OC8051_SFR_PCON:         data_out = pcon;
+      default:                  data_out = 8'h00;
     endcase
 end
 

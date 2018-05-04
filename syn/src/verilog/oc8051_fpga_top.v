@@ -61,11 +61,11 @@ module oc8051_fpga_top (clk, rst,
 //
 // 2x7 led display output (port 0)
 //
-   dispout, 
+   dispout,
 //
 // ports
 //
-   p0_out, p1_out, p2_out, p3_out, 
+   p0_out, p1_out, p2_out, p3_out,
 //
 // external instruction rom interface
 //
@@ -77,7 +77,7 @@ module oc8051_fpga_top (clk, rst,
 //
 // serial interface
 //
-   rxd, txd, 
+   rxd, txd,
 //
 // timer/counter interface
 //

@@ -62,7 +62,7 @@ parameter DELAY = FREQ/BRATE;
 
 input        clk,
              rst,
-	     rxd;
+             rxd;
 
 output       txd;
 

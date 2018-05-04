@@ -74,11 +74,11 @@
 `include "oc8051_defines.v"
 
 
-module oc8051_acc (clk, rst, 
-                 bit_in, data_in, data2_in, 
-		 data_out,
-		 wr, wr_bit, wr_addr,
-		 p, wr_sfr);
+module oc8051_acc (clk, rst,
+                 bit_in, data_in, data2_in,
+                 data_out,
+                 wr, wr_bit, wr_addr,
+                 p, wr_sfr);
 
 
 input clk, rst, wr, wr_bit, bit_in;

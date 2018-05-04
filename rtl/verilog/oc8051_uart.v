@@ -71,39 +71,39 @@
 `include "oc8051_defines.v"
 
 module oc8051_uart (
-    rst, 
-    clk, 
-    bit_in, 
+    rst,
+    clk,
+    bit_in,
     data_in,
     wr_addr,
-    wr, 
+    wr,
     wr_bit,
-    rxd, 
+    rxd,
     txd,
     intr,
-    brate2, 
-    t1_ow, 
+    brate2,
+    t1_ow,
     pres_ow,
-    rclk, 
+    rclk,
     tclk,
     //registers
-    scon, 
-    pcon, 
+    scon,
+    pcon,
     sbuf
 );
 input                       rst;
 input                       clk;
-input	                    bit_in;
-input	                    wr;
-input	                    rxd;
-input	                    wr_bit;
-input	                    t1_ow;
-input	                    brate2;
-input	                    pres_ow;
-input	                    rclk;
-input	                    tclk;
+input                       bit_in;
+input                       wr;
+input                       rxd;
+input                       wr_bit;
+input                       t1_ow;
+input                       brate2;
+input                       pres_ow;
+input                       rclk;
+input                       tclk;
 input   [7:0]               data_in;
-input   [7:0]	            wr_addr;
+input   [7:0]               wr_addr;
 
 output                      txd;
 input                       intr;
@@ -114,7 +114,7 @@ output  [7:0]               sbuf;
 
 reg                         t1_ow_buf;
 //
-reg     [7:0]               scon; 
+reg     [7:0]               scon;
 reg     [7:0]               pcon;
 
 
@@ -122,10 +122,10 @@ reg                         txd;
 reg                         trans;
 reg                         receive;
 reg                         tx_done;
-reg	                        rx_done;
-reg	                        rxd_r;
-reg	                        shift_tr;
-reg	                        shift_re;
+reg                             rx_done;
+reg                             rxd_r;
+reg                             shift_tr;
+reg                             shift_re;
 reg     [1:0]               rx_sam;
 reg     [3:0]               tr_count;
 reg     [3:0]               re_count;
@@ -139,9 +139,9 @@ assign intr = scon[1] | scon [0];
 //
 //serial port control register
 //
-wire                        ren; 
-wire                        tb8; 
-wire                        rb8; 
+wire                        ren;
+wire                        tb8;
+wire                        rb8;
 wire                        ri;
 
 assign ren = scon[4];

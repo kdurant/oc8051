@@ -63,34 +63,34 @@
 
 module oc8051_tc2 (clk, rst,
             wr_addr,
-	    data_in, bit_in,
-	    wr, wr_bit,
-	    t2, t2ex,
+            data_in, bit_in,
+            wr, wr_bit,
+            t2, t2ex,
             rclk, tclk,
-	    brate2, tc2_int,
-	    pres_ow,
+            brate2, tc2_int,
+            pres_ow,
 //registers
-	    t2con, tl2, th2, rcap2l, rcap2h);
+            t2con, tl2, th2, rcap2l, rcap2h);
 
 input [7:0]  wr_addr,
              data_in;
 input        clk,
              rst,
-	     wr,
-	     wr_bit,
-	     t2,
-	     t2ex,
-	     bit_in,
-	     pres_ow;	//prescalre owerflov
+             wr,
+             wr_bit,
+             t2,
+             t2ex,
+             bit_in,
+             pres_ow;   //prescalre owerflov
 output [7:0] t2con,
              tl2,
-	     th2,
-	     rcap2l,
-	     rcap2h;
+             th2,
+             rcap2l,
+             rcap2h;
 output       tc2_int,
-	     rclk,
-	     tclk,
-	     brate2;
+             rclk,
+             tclk,
+             brate2;
 
 
 reg brate2;

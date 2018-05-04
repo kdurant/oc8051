@@ -134,46 +134,46 @@ oc8051_top oc8051_top_1(.wb_rst_i(rst), .wb_clk_i(clk),
          .wbd_adr_o(ext_addr), .wbd_err_i(wbd_err_i),
          .wbd_ack_i(ack_i), .wbd_stb_o(stb_o), .wbd_cyc_o(cyc_o),
 
-	 .wbi_adr_o(iadr_o), .wbi_stb_o(istb_o), .wbi_ack_i(iack_i),
+         .wbi_adr_o(iadr_o), .wbi_stb_o(istb_o), .wbi_ack_i(iack_i),
          .wbi_cyc_o(icyc_o), .wbi_dat_i(idat_i), .wbi_err_i(wbi_err_i),
 
   `ifdef OC8051_PORTS
 
    `ifdef OC8051_PORT0
-	 .p0_i(p0_in),
-	 .p0_o(p0_out),
+         .p0_i(p0_in),
+         .p0_o(p0_out),
    `endif
 
    `ifdef OC8051_PORT1
-	 .p1_i(p1_in),
-	 .p1_o(p1_out),
+         .p1_i(p1_in),
+         .p1_o(p1_out),
    `endif
 
    `ifdef OC8051_PORT2
-	 .p2_i(p2_in),
-	 .p2_o(p2_out),
+         .p2_i(p2_in),
+         .p2_o(p2_out),
    `endif
 
    `ifdef OC8051_PORT3
-	 .p3_i(p3_in),
-	 .p3_o(p3_out),
+         .p3_i(p3_in),
+         .p3_o(p3_out),
    `endif
   `endif
 
 
    `ifdef OC8051_UART
-	 .rxd_i(rxd), .txd_o(txd),
+         .rxd_i(rxd), .txd_o(txd),
    `endif
 
    `ifdef OC8051_TC01
-	 .t0_i(t0), .t1_i(t1),
+         .t0_i(t0), .t1_i(t1),
    `endif
 
    `ifdef OC8051_TC2
-	 .t2_i(t2), .t2ex_i(t2ex),
+         .t2_i(t2), .t2ex_i(t2ex),
    `endif
 
-	 .ea_in(ea[0]));
+         .ea_in(ea[0]));
 
 
 //
@@ -203,7 +203,7 @@ defparam oc8051_serial1.BRATE = 4.8;
 //
 oc8051_uart_test oc8051_uart_test1(.clk(clk), .rst(rst), .addr(ext_addr[7:0]), .wr(write_uart),
                   .wr_bit(p3_out[0]), .data_in(data_out), .data_out(data_out_uart), .bit_out(bit_out), .rxd(txd),
-		  .txd(rxd), .ow(p3_out[1]), .intr(int_uart), .stb(stb_o), .ack(ack_uart));
+                  .txd(rxd), .ow(p3_out[1]), .intr(int_uart), .stb(stb_o), .ack(ack_uart));
 
 
 `endif

@@ -66,49 +66,49 @@
 `include "oc8051_defines.v"
 
 
-module oc8051_ports (clk, 
+module oc8051_ports (clk,
                     rst,
-                    bit_in, 
-		    data_in,
-		    wr, 
-		    wr_bit,
-		    wr_addr, 
+                    bit_in,
+                    data_in,
+                    wr,
+                    wr_bit,
+                    wr_addr,
 
-	`ifdef OC8051_PORT0
-		    p0_out,
+        `ifdef OC8051_PORT0
+                    p0_out,
                     p0_in,
-		    p0_data,
-	`endif
+                    p0_data,
+        `endif
 
-	`ifdef OC8051_PORT1
-		    p1_out,
-		    p1_in,
-		    p1_data,
+        `ifdef OC8051_PORT1
+                    p1_out,
+                    p1_in,
+                    p1_data,
 
-	`endif
+        `endif
 
-	`ifdef OC8051_PORT2
-		    p2_out,
-		    p2_in,
-		    p2_data,
-	`endif
+        `ifdef OC8051_PORT2
+                    p2_out,
+                    p2_in,
+                    p2_data,
+        `endif
 
-	`ifdef OC8051_PORT3
-		    p3_out,
-		    p3_in,
-		    p3_data,
-	`endif
+        `ifdef OC8051_PORT3
+                    p3_out,
+                    p3_in,
+                    p3_data,
+        `endif
 
-		    rmw);
+                    rmw);
 
-input        clk,	//clock
-             rst,	//reset
-	     wr,	//write [oc8051_decoder.wr -r]
-	     wr_bit,	//write bit addresable [oc8051_decoder.bit_addr -r]
-	     bit_in,	//bit input [oc8051_alu.desCy]
-	     rmw;	//read modify write feature [oc8051_decoder.rmw]
-input [7:0]  wr_addr,	//write address [oc8051_ram_wr_sel.out]
-             data_in; 	//data input (from alu destiantion 1) [oc8051_alu.des1]
+input        clk,       //clock
+             rst,       //reset
+             wr,        //write [oc8051_decoder.wr -r]
+             wr_bit,    //write bit addresable [oc8051_decoder.bit_addr -r]
+             bit_in,    //bit input [oc8051_alu.desCy]
+             rmw;       //read modify write feature [oc8051_decoder.rmw]
+input [7:0]  wr_addr,   //write address [oc8051_ram_wr_sel.out]
+             data_in;   //data input (from alu destiantion 1) [oc8051_alu.des1]
 
 `ifdef OC8051_PORT0
   input  [7:0] p0_in;
@@ -133,7 +133,7 @@ input [7:0]  wr_addr,	//write address [oc8051_ram_wr_sel.out]
 `ifdef OC8051_PORT2
   input  [7:0] p2_in;
   output [7:0] p2_out,
-	       p2_data;
+               p2_data;
   reg    [7:0] p2_out;
 
   assign p2_data = rmw ? p2_out : p2_in;
@@ -143,7 +143,7 @@ input [7:0]  wr_addr,	//write address [oc8051_ram_wr_sel.out]
 `ifdef OC8051_PORT3
   input  [7:0] p3_in;
   output [7:0] p3_out,
-	       p3_data;
+               p3_data;
   reg    [7:0] p3_out;
 
   assign p3_data = rmw ? p3_out : p3_in;
